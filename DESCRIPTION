@@ -1,0 +1,41 @@
+Package: ngvb
+Type: Package
+Title: Latent Non-Gaussian Modelling with 'INLA' and Variational Bayes
+Version: 0.2.1
+Authors@R: person("Rafael", "Cabral", email = "rafael.medeiros.cabral@gmail.com",
+    role = c("aut", "cre", "cph"))
+Description: Diagnoses whether the latent Gaussian assumption of a model fitted
+    with the 'INLA' package is adequate, and fits latent non-Gaussian extensions
+    that relax it. The function ng.check() reports a Bayes-factor sensitivity
+    diagnostic that says whether, and where, the Gaussian assumption is
+    inadequate; ngvb() then fits the non-Gaussian model by a variational-Bayes
+    loop around 'INLA', adding local flexibility only where the data support it.
+    A single unified engine implements the conditional precision
+    Q(theta, V) = D(theta)^T diag(1/V) D(theta) and owns its normalizing
+    constant, and a model registry covers iid, random-walk, autoregressive,
+    Ornstein-Uhlenbeck, intrinsic-CAR (besag), simultaneous-autoregression,
+    'SPDE'/Matern and seasonal models. Methods follow Cabral, Bolin and Rue
+    (2024) <doi:10.1080/01621459.2023.2296704> and Cabral, Bolin and Rue (2025)
+    <doi:10.1093/jrsssb/qkae107>.
+License: GPL (>= 3)
+Encoding: UTF-8
+LazyData: true
+Depends: R (>= 4.1)
+Imports: Matrix, methods, stats, graphics, utils, codetools, GIGrvg,
+        ggplot2, patchwork
+Suggests: INLA, testthat (>= 3.0.0), fmesher, sf, spData, spdep, knitr,
+        rmarkdown, bslib
+Additional_repositories: https://inla.r-inla-download.org/R/stable
+URL: https://github.com/rafaelcabral-ai/ngvb,
+        https://rafaelcabral-ai.github.io/ngvb/
+BugReports: https://github.com/rafaelcabral-ai/ngvb/issues
+VignetteBuilder: knitr
+Config/testthat/edition: 3
+Config/Needs/website: rmarkdown
+RoxygenNote: 7.3.3
+NeedsCompilation: no
+Packaged: 2026-11-01 03:31:09 UTC; rafae
+Author: Rafael Cabral [aut, cre, cph]
+Maintainer: Rafael Cabral <rafael.medeiros.cabral@gmail.com>
+Repository: CRAN
+Date/Publication: 2026-11-19 10:50:02 UTC
